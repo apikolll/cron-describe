@@ -1,0 +1,51 @@
+{
+  "name": "cron-describe",
+  "displayName": "Cron Describe",
+  "description": "Hover over a cron expression to see what it means in plain English.",
+  "version": "0.0.1",
+  "publisher": "afiq",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Cron Describe",
+      "properties": {
+        "cronDescribe.use24HourTime": {
+          "type": "boolean",
+          "default": false,
+          "description": "Show times in 24-hour format (e.g. 18:00 instead of 06:00 PM)."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "cronDescribe.edit",
+        "title": "Edit Cron Expression",
+        "category": "Cron"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "watch": "tsc -watch -p .",
+    "test": "npm run compile && node --test out/test/",
+    "package": "npm run compile && npx --yes @vscode/vsce package --allow-missing-repository --skip-license"
+  },
+  "dependencies": {
+    "cronstrue": "^2.59.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "@types/vscode": "~1.90.0",
+    "typescript": "^5.9.3"
+  }
+}
