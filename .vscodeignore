@@ -1,5 +1,7 @@
-src/**
-out/test/**
-**/*.map
-tsconfig.json
-.gitignore
+**
+!dist/extension.js
+!images/icon.png
+!package.json
+!README.md
+!CHANGELOG.md
+!LICENSE
